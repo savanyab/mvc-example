@@ -5,7 +5,8 @@ const models = require('../models');
 // index
 pokemons.get('/', (req, res) => {
   models.Pokemon.findAll().then(pokemons => {
-    res.json(pokemons);
+    res.locals.pokemons = pokemons;
+    res.render('pokemons/index.handlebars');
   });
 });
 
@@ -13,12 +14,26 @@ pokemons.get('/', (req, res) => {
 pokemons.get('/:id', (req, res) => {
   models.Pokemon.findById(req.params.id).then(pokemon => {
     if (pokemon !== null) {
-      return res.json(pokemon);
+      res.locals.pokemon = pokemon;
+      res.render('pokemons/show.handlebars');
     } else {
       return res.status(400).send('Nincs ilyen id');
     };
   });
 });
+
+// edit
+pokemons.get('/:id/edit', (req, res) => {
+  models.Pokemon.findById(req.params.id).then(pokemon => {
+    if (pokemon !== null) {
+      res.locals.pokemon = pokemon;
+      res.render('pokemons/edit.handlebars');
+    } else {
+      res.status(400).send('Nincs ilyen óra');
+    };
+  });
+});
+
 
 // create
 pokemons.post('/', (req, res) => {

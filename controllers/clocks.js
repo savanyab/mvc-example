@@ -6,7 +6,8 @@ const models = require('../models');
 // index
 clocks.get('/', (req, res) => {
   models.Clock.findAll().then(clocks => {
-    res.json(clocks);
+    res.locals.clocks = clocks;
+    res.render('clocks/index.handlebars');
   });
 });
 
@@ -14,9 +15,22 @@ clocks.get('/', (req, res) => {
 clocks.get('/:id', (req, res) => {
   models.Clock.findById(req.params.id).then(clock => {
     if (clock !== null) {
-      res.json(clock);
+      res.locals.clock = clock;
+      res.render('clocks/show.handlebars');
     } else {
-      res.status(400).send('Nincs ilyen id');
+      res.status(400).send('Nincs ilyen óra');
+    };
+  });
+});
+
+// edit
+clocks.get('/:id/edit', (req, res) => {
+  models.Clock.findById(req.params.id).then(clock => {
+    if (clock !== null) {
+      res.locals.clock = clock;
+      res.render('clocks/edit.handlebars');
+    } else {
+      res.status(400).send('Nincs ilyen óra');
     };
   });
 });
