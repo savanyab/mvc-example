@@ -1,21 +1,18 @@
-<div class="table-responsive">
-  <table class="table table-bordered table-striped" style="margin-top:2%;">
-    <thead>
-      <tr>
-        <th colspan="2">Clock details</th>
-      </tr>
-    </thead>
-    <tr>
-      <td><strong>Manufacturer </strong> </td>
-      <td>{{clock.manufacturer}}</td>
-    </tr>
-    <tr>
-      <td><strong>Model </strong></td>
-      <td>{{clock.model}}</td>
-    </tr>
-    <tr>
-      <td><strong>Type </strong></td>
-      <td>{{clock.type}}</td>
-    </tr>
-  </table>
+<div class="card bg-light mb-3" style="max-width: 100%; margin-top: 20px">
+  <div class="card-header"><b>Manufacturer</b></div>
+  <div class="card-body">
+    <p class="card-text">{{clock.manufacturer}}</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <div class="card-header"><b>Model</b></div>
+  <div class="card-body">
+    <p class="card-text">{{clock.model}}</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <div class="card-header"><b>Type</b></div>
+  <div class="card-body">
+    <p class="card-text">{{clock.type}}</p>
+  </div>
 </div>

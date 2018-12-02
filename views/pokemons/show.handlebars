@@ -1,21 +1,18 @@
-<div class="table-responsive">
-  <table class="table table-bordered table-striped" style="margin-top:2%;">
-    <thead>
-      <tr>
-        <th colspan="2">Pokemon details</th>
-      </tr>
-    </thead>
-    <tr>
-      <td><strong>Name </strong> </td>
-      <td>{{pokemon.name}}</td>
-    </tr>
-    <tr>
-      <td><strong>Type </strong></td>
-      <td>{{pokemon.type}}</td>
-    </tr>
-    <tr>
-      <td><strong>CP </strong></td>
-      <td>{{pokemon.cp}}</td>
-    </tr>
-  </table>
+<div class="card bg-light mb-3" style="max-width: 100%; margin-top: 20px">
+  <div class="card-header"><b>Name</b></div>
+  <div class="card-body">
+    <p class="card-text">{{pokemon.name}}</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <div class="card-header"><b>Type</b></div>
+  <div class="card-body">
+    <p class="card-text">{{pokemon.type}}</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <div class="card-header"><b>CP</b></div>
+  <div class="card-body">
+    <p class="card-text">{{pokemon.cp}}</p>
+  </div>
 </div>

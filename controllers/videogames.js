@@ -12,9 +12,9 @@ videogames.get('/', (req, res) => {
 
 // show
 videogames.get('/:id', (req, res) => {
-  models.Videogame.findById(req.params.id).then(videogames => {
-    if (videogames !== null) {
-      res.locals.videogames = videogames;
+  models.Videogame.findById(req.params.id).then(videogame => {
+    if (videogame !== null) {
+      res.locals.videogame = videogame;
       res.render('videogames/show.handlebars');
     } else {
       res.status(400).send('Nincs ilyen id');

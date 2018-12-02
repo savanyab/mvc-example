@@ -1,22 +1,18 @@
-<div class="table-responsive">
-  <table class="table table-bordered table-striped" style="margin-top:2%;">
-    <thead>
-      <tr>
-        <th colspan="2">Videogame details</th>
-      </tr>
-    </thead>
-    <tr>
-      <td><strong>Distributor </strong> </td>
-      <td>{{videogames.distributor}}</td>
-    </tr>
-    <tr>
-      <td><strong>Name</strong></td>
-      <td>{{videogames.name}}</td>
-    </tr>
-    <tr>
-      <td><strong>Type </strong></td>
-      <td>{{videogames.type}}</td>
-    </tr>
-  </table>
+<div class="card bg-light mb-3" style="max-width: 100%; margin-top: 20px">
+  <div class="card-header"><b>Distributor</b></div>
+  <div class="card-body">
+    <p class="card-text">{{videogame.distributor}}</p>
+  </div>
 </div>
-
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <div class="card-header"><b>Name</b></div>
+  <div class="card-body">
+    <p class="card-text">{{videogame.name}}</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <div class="card-header"><b>Type</b></div>
+  <div class="card-body">
+    <p class="card-text">{{videogame.type}}</p>
+  </div>
+</div>
