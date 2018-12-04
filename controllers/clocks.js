@@ -72,7 +72,7 @@ clocks.get('/:id/edit', (req, res) => {
     models.Clock.findOne( { where: { id: req.params.id}}).then(result => {
       if (result !== null) {
         models.Clock.destroy({ where: { id: req.params.id } }).then(clocks => {
-        return  res.json(clocks);
+          return res.redirect(`/clocks`);
         });
       } else {
         return  res.status(400).send('Nincs ilyen id');
