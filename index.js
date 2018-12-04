@@ -12,12 +12,10 @@ app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-/*
 app.get('/', (req, res) => {
-  res.locals.barmilyenKulcs = 'Megyunk az EPAMba';
+  res.locals.barmilyenKulcs = 'Üdvözöllek az órák, videójátékok és pokemonok közt!';
   res.render('indexoldal');
 });
-*/
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
