@@ -74,7 +74,7 @@ pokemons.delete('/:id', (req, res) => {
       return res.status(400).send('Nincs ilyen id');
     } else {
       models.Pokemon.destroy({ where: { id: req.params.id } }).then(pokemon => {
-      return  res.json(pokemon);
+        return res.redirect(`/pokemons`);
       });
     };
   });
