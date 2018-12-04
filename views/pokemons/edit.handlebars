@@ -1,5 +1,5 @@
 <h2>Edit</h2>
-<form>
+<form method="POST" action="/pokemons/{{pokemon.id}}">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" name="name" value="{{pokemon.name}}" />

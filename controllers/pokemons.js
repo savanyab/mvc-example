@@ -29,7 +29,7 @@ pokemons.get('/:id/edit', (req, res) => {
       res.locals.pokemon = pokemon;
       res.render('pokemons/edit.handlebars');
     } else {
-      res.status(400).send('Nincs ilyen óra');
+      res.status(400).send('Nincs ilyen pokemon');
     };
   });
 });
