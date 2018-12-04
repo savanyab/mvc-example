@@ -59,7 +59,7 @@ pokemons.put('/:id', (req, res) => {
           return res.status(400).send('Már van ilyen name');
         } else {
           models.Pokemon.update(req.body, { where: { id: req.params.id } }).then(pokemon => {
-            return res.json(pokemon);
+            return res.redirect(`/pokemons/${req.params.id}`);
           });
         };
       }); 

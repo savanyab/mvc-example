@@ -5,6 +5,9 @@ const videogames = require('./controllers/videogames');
 const bodyParser = require('body-parser');
 const pokemons = require('./controllers/pokemons');
 const exphbs = require('express-handlebars');
+const methodOverride = require('method-override');
+
+app.use(methodOverride('_method'));
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
