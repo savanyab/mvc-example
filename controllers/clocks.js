@@ -57,7 +57,7 @@ clocks.get('/:id/edit', (req, res) => {
         models.Clock.findOne( { where: { model: req.body.model}}).then(result => {
           if (result === null) {
             models.Clock.update(req.body, { where: { id: req.params.id } }).then(clock => {
-              return  res.json(clock);
+              return res.redirect(`/clocks/${req.params.id}`);
             });
           } else {
             return res.status(400).send('Már van ilyen model');
