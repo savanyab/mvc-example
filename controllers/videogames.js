@@ -74,10 +74,9 @@ videogames.delete('/:id', (req, res) => {
       return res.status(400).send('Nincs ilyen id');
     } else {
       models.Videogame.destroy( { where: { id: req.params.id}}).then(videogame => {
-         res.json(videogame);
+        return res.redirect(`/videogames`);
       });
     };
-    res.json(result);
   });
 });
 
