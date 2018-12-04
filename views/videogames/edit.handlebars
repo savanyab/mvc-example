@@ -1,5 +1,5 @@
 <h2>Edit</h2>
-<form>
+<form method="POST" action="/videogames/{{videogame.id}}?_method=PUT">
   <div class="form-group">
     <label for="distributor">Distributor</label>
     <input type="text" class="form-control" name="distributor" value="{{videogame.distributor}}" />
@@ -12,5 +12,5 @@
     <label for="model">Type</label>
     <input type="text" class="form-control" name="type" value="{{videogame.type}}" />
   </div>
-    <button type="button" class="btn btn-info" style="margin: 20px 0px 20px 0px">Save</button>
+    <input type="submit" value="Frissítés" />
 </form>

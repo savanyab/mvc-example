@@ -24,9 +24,9 @@ videogames.get('/:id', (req, res) => {
 
 // edit
 videogames.get('/:id/edit', (req, res) => {
-  models.Videogame.findById(req.params.id).then(videogames => {
-    if (videogames !== null) {
-      res.locals.videogames = videogames;
+  models.Videogame.findById(req.params.id).then(videogame => {
+    if (videogame !== null) {
+      res.locals.videogame = videogame;
       res.render('videogames/edit.handlebars');
     } else {
       res.status(400).send('Nincs ilyen óra');
@@ -58,7 +58,7 @@ videogames.put('/:id', (req, res) => {
           return res.status(400).send('Már van ilyen nevű videojáték');
         } else {
           models.Videogame.update(req.body, { where: { id: req.params.id } }).then(videogame => {
-            res.json(videogame);
+            return res.redirect(`/videogames/${req.params.id}`);
           });
         };
       });
