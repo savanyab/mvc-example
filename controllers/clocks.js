@@ -11,6 +11,11 @@ clocks.get('/', (req, res) => {
   });
 });
 
+// new
+clocks.get('/new', (req, res) => {
+  res.render('clocks/create.handlebars');
+});
+
 // show
 clocks.get('/:id', (req, res) => {
   models.Clock.findById(req.params.id).then(clock => {
@@ -35,6 +40,7 @@ clocks.get('/:id/edit', (req, res) => {
   });
 });
 
+
 // create
   clocks.post('/', (req, res) => {
     models.Clock.findOne( { where: { model: req.body.model}}).then(result => {
@@ -42,7 +48,7 @@ clocks.get('/:id/edit', (req, res) => {
         res.status(400).send('Már van ilyen model');
       } else {
         models.Clock.create(req.body).then(clock => {
-          res.json(clock);
+          res.redirect('/clocks');
         });
       };
     });
