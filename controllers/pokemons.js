@@ -10,6 +10,11 @@ pokemons.get('/', (req, res) => {
   });
 });
 
+// new
+pokemons.get('/new', (req, res) => {
+  res.render('pokemons/create.handlebars');
+});
+
 // show
 pokemons.get('/:id', (req, res) => {
   models.Pokemon.findById(req.params.id).then(pokemon => {
@@ -42,7 +47,7 @@ pokemons.post('/', (req, res) => {
       res.status(400).send('Már van ilyen pokemon');
     } else {
       models.Pokemon.create(req.body).then(pokemon => {
-        res.json(pokemon);
+        res.redirect('/pokemons');
       });
     };
   });
