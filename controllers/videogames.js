@@ -10,6 +10,11 @@ videogames.get('/', (req, res) => {
   });
 });
 
+// new
+videogames.get('/new', (req, res) => {
+  res.render('videogames/create.handlebars');
+});
+
 // show
 videogames.get('/:id', (req, res) => {
   models.Videogame.findById(req.params.id).then(videogame => {
@@ -41,7 +46,7 @@ videogames.post('/', (req, res) => {
       return res.status(400).send('Már van ilyen nevű videojáték');
     } else {
       models.Videogame.create(req.body).then(videogame => {
-        res.json(videogame);
+        res.redirect('/videogames');
       });
     };
   });
